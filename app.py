@@ -6,9 +6,6 @@ from twilio.twiml.messaging_response import MessagingResponse
 glo_links=""
 app = Flask(__name__)
 
-@app.route("/")
-def hello():
-    return "Status Online"
 
 
 
