@@ -10,14 +10,6 @@ app = Flask(__name__)
 def hello():
     return "Status Online"
 
-@app.route("/yt_down")
-def yt_down():
-    import pafy
-    import requests as r
-    par = "https://youtu.be/2Jub_HS-_0c"
-    audio = pafy.new(par)
-    x=audio.streams
-    x[0].download()
 
 
 
