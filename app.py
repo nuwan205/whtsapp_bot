@@ -40,7 +40,7 @@ def bot():
             responded = True
 
     if 'menu' in incoming_msg.lower():
-        text = f'[+]BC4T (Nuwan Konara) \n\n*Menu :*  \n\n*YOU* _<url>_ : Youtube Downloader\n\n *FB* _<url>_ : Facebook Downloader\n\n'
+        text = f'[+]BC4T (Nuwan Konara) \n\n*Menu :*  \n\n*YOU* _<url>_ : Youtube Downloader\n\n *FB* _<url>_ : Facebook Downloader\n\n \n\n *TRS* _<Text>_ : Translate to English to Sinhala\n\n\n\n *TRE* _<Text>_ : Translate Sinhala To English\n\n'
         msg.body(text)
         responded = True
 
@@ -63,8 +63,20 @@ def bot():
         x=ys.url
         print(x)
         msg.body(x)
-       
-        print("Download completed!!")
+    if 'TRS' in incoming_msg:
+        from google_trans_new import google_translator
+        translator = google_translator()  
+        translate_text = translator.translate(incoming_msg[3:],lang_src='en', lang_tgt='si')  
+        print(translate_text)
+        msg.body(translate_text)
+     if 'TRE' in incoming_msg:
+        from google_trans_new import google_translator
+        translator = google_translator()  
+        translate_text = translator.translate(incoming_msg[3:],lang_src='si', lang_tgt='en')  
+        print(translate_text)
+        msg.body(translate_text)
+    
+      
 
 
 
