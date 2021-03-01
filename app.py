@@ -99,7 +99,7 @@ def bot():
         links=res.text
         links= json.loads(links)
         conv_url="https://yt1s.com/api/ajaxConvert/convert"
-         glo_links=""
+        glo_links=""
         for i in (links['links']['mp4']):
             link=links['links']['mp4'][i]
             if link['q']==p:
