@@ -52,97 +52,16 @@ def bot():
         video_url = re.search('sd_src:"(.+?)"', html.text).group(1)
         msg.body(video_url)
         responded = True
-
-
-
-    
-    def links(incoming_msg):
-        global glo_links
-        import requests as r
-        import json
-        print("hello")
-        url="https://yt1s.com/api/ajaxSearch/index"
-        link=incoming_msg[3:]
-        glo_links=link
-   
-        data={"q":link+"=home"}
-  
-        res=r.post(url,data=data)
-        links=res.text
-        links= json.loads(links)
-        conv_url="https://yt1s.com/api/ajaxConvert/convert"
-        x=""
-        for i in (links['links']['mp4']):
-            link=links['links']['mp4'][i]
-            
-            x+=","+link['q']+"-"+link['size']
-            
-     
-        y=x.replace(",","\n")
-        z=y+"\n\nInput the quality Ex:1080p"
-        msg.body(y)
-       
-    def down(p):
-        global glo_links
-        import requests as r
-        import json
-    
-        print(p)
-        link=glo_links
-        glo_links=""
-        print(link)
-        data={"q":link+"=home"}
-        print(data['q'])
-        url="https://yt1s.com/api/ajaxSearch/index"
-        res=r.post(url,data=data)
-        links=res.text
-        links= json.loads(links)
-        conv_url="https://yt1s.com/api/ajaxConvert/convert"
-        for i in (links['links']['mp4']):
-            link=links['links']['mp4'][i]
-            if link['q']==p:
-                data={"vid":links['vid'],"k":link['k']}
-                res = r.post(conv_url,data=data)
-                down=res.text
-                down_link=json.loads(down)
-                x=down_link['dlink']
-                print(x)
-                msg.body(x)
-                responded=True
-            else:
-                continue
-           
-
-
-    if 'YOU' in incoming_msg.upper():
-        links(incoming_msg)
-        print(glo_links)
-
-    if '720p' in incoming_msg.lower():
-        down(incoming_msg)
-    
-
-    if '1080p' in incoming_msg.lower():
-        down(incoming_msg)
-    
-
-    if '480p' in incoming_msg.lower():
-        down(incoming_msg)
-    
-
-    if '360p' in incoming_msg.lower():
-        down(incoming_msg)
-
-    if '240p' in incoming_msg.lower():
-        down(incoming_msg)
-    
-    if '144p' in incoming_msg.lower():
-        down(incoming_msg)
-   
+    if 'YOU' in incoming_msg:
         
-
-
-
+        from pytube import YouTube
+        link = incoming_msg[3:]
+        yt = YouTube(link)
+        print("Title: ",yt.title)
+        print("Length of video: ",yt.length)
+        ls = yt.streams.filter(progressive=True,file_extension='mp4').get_highest_resolution()
+        ys.download()
+        print("Download completed!!")
 
 
 
