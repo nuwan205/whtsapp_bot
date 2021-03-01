@@ -90,7 +90,7 @@ def bot():
         print(p)
         print(glo_links)
         link=glo_links
-        glo_links=""
+       
         print(link)
         data={"q":link+"=home"}
         print(data['q'])
@@ -99,6 +99,7 @@ def bot():
         links=res.text
         links= json.loads(links)
         conv_url="https://yt1s.com/api/ajaxConvert/convert"
+         glo_links=""
         for i in (links['links']['mp4']):
             link=links['links']['mp4'][i]
             if link['q']==p:
