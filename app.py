@@ -88,6 +88,7 @@ def bot():
         import json
     
         print(p)
+        print(glo_links)
         link=glo_links
         glo_links=""
         print(link)
