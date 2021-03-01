@@ -7,6 +7,10 @@ glo_links=""
 app = Flask(__name__)
 
 
+@app.route("/")
+def hello():
+    return "Status Online"
+
 
 
 
