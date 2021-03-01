@@ -63,13 +63,13 @@ def bot():
         x=ys.url
         print(x)
         msg.body(x)
-    if 'TRS' in incoming_msg:
+    if 'TRS' in incoming_msg.upper():
         from google_trans_new import google_translator
         translator = google_translator()  
         translate_text = translator.translate(incoming_msg[3:],lang_src='en', lang_tgt='si')  
         print(translate_text)
         msg.body(translate_text)
-    if 'TRE' in incoming_msg:
+    if 'TRE' in incoming_msg.upper():
         from google_trans_new import google_translator
         translator = google_translator()  
         translate_text = translator.translate(incoming_msg[3:],lang_src='si', lang_tgt='en')  
