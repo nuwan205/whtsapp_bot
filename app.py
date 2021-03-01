@@ -62,7 +62,7 @@ def bot():
         ys = yt.streams.filter(progressive=True,file_extension='mp4').get_highest_resolution()
         x=ys.url
         print(x)
-        msg.body(x)
+        msg.media(x)
        
         print("Download completed!!")
 
