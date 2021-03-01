@@ -107,8 +107,9 @@ def bot():
                 down=res.text
                 down_link=json.loads(down)
                 x=down_link['dlink']
-                print(x)
-                msg.body(x)
+                j=r.get(x)
+                print(j)
+                msg.body(j)
                 responded=True
             else:
                 continue
