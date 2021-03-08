@@ -76,6 +76,8 @@ def bot():
         msg.body(translate_text)
     if 'CAL' in incoming_msg.upper():
         num=str(incoming_msg[3:])
+        if "÷" in num:
+            num=num.replace("÷","/")
         x=eval(num)
         final=str(x)
         msg.body(final)
