@@ -76,8 +76,8 @@ def bot():
         print(translate_text)
         msg.body(translate_text)
     if 'CAL' in incoming_msg.upper():
-        print(incoming_msg[3:])
-        x=eval(str(incoming_msg[3:]))
+        num=str(incoming_msg[3:])
+        x=eval(num)
         msg.body(x)
     
       
