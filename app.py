@@ -34,7 +34,6 @@ def bot():
     if 'start' in incoming_msg.lower():
         text = "Helo how are you:::::Type menu for more"
         print(dir(msg))
-        i="1","2","4"
         for i in i:
             msg.body(i)
             responded = True
@@ -78,6 +77,7 @@ def bot():
     if 'CAL' in incoming_msg.upper():
         num=str(incoming_msg[3:])
         x=eval(num)
+        print(x)
         msg.body(x)
     
       
