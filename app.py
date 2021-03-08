@@ -75,6 +75,9 @@ def bot():
         translate_text = translator.translate(incoming_msg[3:],lang_src='si', lang_tgt='en')  
         print(translate_text)
         msg.body(translate_text)
+    if 'CAL' in incoming_msg.upper():
+        x=eval(incoming_msg[3:])
+        msg.body(x)
     
       
 
