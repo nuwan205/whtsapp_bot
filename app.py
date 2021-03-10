@@ -82,7 +82,7 @@ def bot():
         final=str(x)
         msg.body(final)
     if 'media' in incoming_msg:
-        msg.media("https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4")
+        msg.media("http://www.africau.edu/images/default/sample.pdf")
        
 
 
