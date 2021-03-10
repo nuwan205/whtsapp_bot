@@ -81,8 +81,9 @@ def bot():
         x=eval(num)
         final=str(x)
         msg.body(final)
-    
-      
+    if 'media' in incoming_msg:
+        msg.media("https://i.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U")
+       
 
 
 
