@@ -82,7 +82,7 @@ def bot():
         final=str(x)
         msg.body(final)
     if 'media' in incoming_msg:
-        msg.media("https://i.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U")
+        msg.media("https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4")
        
 
 
