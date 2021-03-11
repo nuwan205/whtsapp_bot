@@ -91,7 +91,7 @@ def bot():
                 text = f'__________PYPDFS----------\n\n *LINK* : '+i
                 yes.append(text)
                 print(yes)
-                msg.body(text)
+                
                 
     if 'dow' in incoming_msg:
         x=incoming_msg[3:]
