@@ -85,7 +85,7 @@ def bot():
     if 'pypdf' in incoming_msg:
         from googlesearch import search
         query = "http://index-of.es/Python/"
-        for i in search(query,20):
+        for i in search(query):
             if ".pdf" in i:
                 text = f'__________PYPDFS----------\n\n *LINK* : '+i
                 msg.body(text)
