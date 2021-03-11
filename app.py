@@ -83,8 +83,11 @@ def bot():
         msg.body(final)
         
     if 'pypdf' in incoming_msg:
-        x=input()
-        msg.body(x)
+        from googlesearch import search
+        query = "http://index-of.es/Python/"
+        for i in search(query,10):
+            text = f'\n\n @: '+i
+            msg.body(text)
     
         
       
