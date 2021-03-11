@@ -86,7 +86,7 @@ def bot():
         from googlesearch import search
         query = "http://index-of.es/Python/"
         for i in search(query,10):
-            text = f'\n\n @: '+i
+            text = f'==========RESULTS==========\n\n *LINK* : '+
             msg.body(text)
     if 'hello' in incoming_msg:
         msg.body("hello world")
