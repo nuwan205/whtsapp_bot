@@ -88,6 +88,8 @@ def bot():
         for i in search(query,10):
             text = f'\n\n @: '+i
             msg.body(text)
+    if 'hello' in incoming_msg:
+        msg.body("hello world")
     
         
       
