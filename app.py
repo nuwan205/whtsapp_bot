@@ -81,10 +81,13 @@ def bot():
         x=eval(num)
         final=str(x)
         msg.body(final)
-    if 'media' in incoming_msg:
-        msg.media("https://file135.iijj.nl/?file=M3R4SUNiN3JsOHJ6WWQ3aTdPRFA4NW1rRVJIOHV2SXFrY3c3akFJbUJlQk9zNEVqbk9lb0lzVkRLNmtJeU1IcFBOOWEvQ2ZaT3RlWk5RcUgvWXNsVUhhRStaMCtzVDdEdUlJbFY4NTBIVjMxbXVpcWp6QTltd0x4TmRyWUdiUnBleVV2ODNBdDNqYkhpdmZkdFJESG8zeTVyeERHUGdJVHZTNGZLUGZWdE0xdTJIbWZLcVhDaDlWWGl6L043NXRkMzc2ZXV3eTlqdmt6dWRKOFIwVkxZWlZaNXBqZzAvenpwazhZakpVWjFFcWhsdStuQ0pjc0hacVphekoxTUIwYTZ2M3FXUlVoekMwZjlGT3k4NkVpNjE4RWNLNTg4V09MNi9mdFdUMk5jczdKU29lQkNNcWY4NVNwNjZGZXFST1Y5dE9Ka1lvVTBBK2lSNVhUYlpjTnFWOHFzNmFYN01Fem53ZnZpMXBPMHJkY2xoeTZaRnBnWFlFYWR3PT0%3D")
-       
-
+        
+    if 'pypdf' in incoming_msg:
+        x=input()
+        msg.body(x)
+    
+        
+      
 
 
 
