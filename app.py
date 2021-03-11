@@ -89,8 +89,9 @@ def bot():
             if ".pdf" in i:
                 text = f'__________PYPDFS----------\n\n *LINK* : '+i
                 msg.body(text)
-    if 'hello' in incoming_msg:
-        msg.body("hello world")
+    if 'dow' in incoming_msg:
+        x=incoming_msg[3:]
+        msg.media(x)
     
         
       
