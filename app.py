@@ -39,7 +39,7 @@ def bot():
             responded = True
 
     if 'menu' in incoming_msg.lower():
-        text = f'[+]BC4T (Nuwan Konara) \n\n*Menu :*  \n\n*YOU* _<url>_ : Youtube Downloader\n\n *FB* _<url>_ : Facebook Downloader \n\n *TRS* _<Text>_ : Translate to English to Sinhala\n\n *TRE* _<Text>_ : Translate Sinhala To English\n\n*CAL* _<expression>_ : Calculator'
+        text = f'[+]BC4T (Nuwan Konara) \n\n*Menu :*  \n\n*YOU* _<url>_ : Youtube Downloader\n\n *FB* _<url>_ : Facebook Downloader \n\n *TRS* _<Text>_ : Translate to English to Sinhala\n\n *TRE* _<Text>_ : Translate Sinhala To English\n\n*pypdf*: Python Pdf set\\n\n*dow* _<link>_ : download media items'
         msg.body(text)
         responded = True
 
@@ -85,12 +85,12 @@ def bot():
     if 'pypdf' in incoming_msg:
         from googlesearch import search
         query = "http://index-of.es/Python/"
-        yes=[]
-        for i in search(query,50):
+    
+        for i in search(query,10):
             if ".pdf" in i:
                 text = f'__________PYPDFS----------\n\n *LINK* : '+i
-                yes.append(text)
-                print(yes)
+               
+                msg.body(text)
                 
                 
     if 'dow' in incoming_msg:
