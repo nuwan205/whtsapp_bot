@@ -81,7 +81,7 @@ def bot():
         x=eval(num)
         final=str(x)
         msg.body(final)
-    if 'tictok' in incoming_msg:
+    if 'tiktok' in incoming_msg:
         import requests
         import json 
         urls=incoming_msg
