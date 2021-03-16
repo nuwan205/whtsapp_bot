@@ -46,7 +46,7 @@ def bot():
     if 'https://www.facebook.com' in incoming_msg.lower():
         import requests as r
         import re
-        par = incoming_msg[2:]
+        par = incoming_msg
         html = r.get(par)
         video_url = re.search('sd_src:"(.+?)"', html.text).group(1)
         msg.body(video_url)
