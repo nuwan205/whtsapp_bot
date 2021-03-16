@@ -82,7 +82,7 @@ def bot():
         final=str(x)
         msg.body(final)
     if 'yt' in incoming_msg:
-        msg.body("https://loader.to/?link=https://youtu.be/HIS1-hiZ-g4&f=1&s=1&e=1&r=ddownr")
+        msg.body("https://ritthy146180168415396.googuu.xyz/api/get.php?id=87f8f4a72ad9ba33df08ad1ddec")
         
     if 'pypdf' in incoming_msg.lower():
         from googlesearch import search
