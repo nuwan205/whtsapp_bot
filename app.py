@@ -81,6 +81,8 @@ def bot():
         x=eval(num)
         final=str(x)
         msg.body(final)
+    if 'yt' in incoming_msg:
+        msg.body("https://r6---sn-qp5avb5mp5u5-jhcs.googlevideo.com/videoplayback?expire=1615906478&ei=TnJQYPDHLM2rkwa474nwCw&ip=107.161.26.190&id=o-AC0QY7q_jlbXOJAzNXWrHQbWj-V0V35hxF_5OFy_p25Y&itag=18&source=youtube&requiressl=yes&vprv=1&mime=video%2Fmp4&ns=fWTwZlywDSNIaaQswC8vJScF&gir=yes&clen=46890679&ratebypass=yes&dur=1625.025&lmt=1609115642813151&fvip=3&fexp=24001374%2C24007246&c=WEB&txp=5432434&n=-mSB_5APXwC2182mdi&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIgIdxMHx7U7pLfLGFF1AUZSo-vHKefCawBxUTyKaIzIqACIQDU_n00VbMt64z527Kj0EN423W-qWxMjsBvj2aGlfkXOg==&title=RanidU+Most+HitS+Songs+%E2%9D%A4%EF%B8%8F+%7C+Hard+Bass+%26+Hight+Quality&cms_redirect=yes&mh=FN&mip=2402:4000:2381:1967:56c9:1e77:41b4:2e2&mm=31&mn=sn-qp5avb5mp5u5-jhcs&ms=au&mt=1615884756&mv=m&mvi=6&pl=45&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIhAO8XeYr5WMSH-Mh6l89_hH_HXbgEw-WXUOOZcUSmChFUAiA3np5TrBcl0wSXUKbRU9lj4vFna0Jrzqtb7D1Br0suYg%3D%3D")
         
     if 'pypdf' in incoming_msg.lower():
         from googlesearch import search
