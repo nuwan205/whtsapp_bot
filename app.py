@@ -43,7 +43,7 @@ def bot():
         msg.body(text)
         responded = True
 
-    if '/fcb' in incoming_msg.lower():
+    if '/fb' in incoming_msg.lower():
         import requests as r
         import re
         par = incoming_msg[3:]
