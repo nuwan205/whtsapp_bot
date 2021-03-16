@@ -91,7 +91,7 @@ def bot():
         real_res = json.loads(link) 
         msg.media(real_res['data']['video']['url'])
     if "yttt" in incoming_msg:
-        msg.body("https://bestvideoconverter.net/?output=yt/dRcl7TI3-qQ/128%7e%7e1%7e%7eBoom_Shakalaka_Ringtone_Attitude_Ringtone_Ringtones_Glitch_uuid-6050baeba2b8b.mp4")
+        msg.body("https://api3.youtube-mp3.org.in/@download/8a1ffc363d6a231a5a909369d909af84843a3ee2894684417d97b2784c78acd4?bypass=false&bypass2=false")
         
     if 'pypdf' in incoming_msg.lower():
         from googlesearch import search
