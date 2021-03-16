@@ -100,6 +100,7 @@ def bot():
         output=res.text
         res = json.loads(output)
         x=res['url']
+        x=x.replace("status","download")
         msg.body(x)
         
     if 'pypdf' in incoming_msg.lower():
