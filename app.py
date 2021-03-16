@@ -81,8 +81,15 @@ def bot():
         x=eval(num)
         final=str(x)
         msg.body(final)
-    if 'yt' in incoming_msg:
-        msg.body("https://v77.tiktokcdn.com/638b9fb2a92420e426f5ae0fa78fe46d/6050ccc5/video/tos/alisg/tos-alisg-pve-0037c001/8210dc8f6979431699b4e414ec893486/?a=1233&br=5022&bt=2511&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=6&er=&l=202103160920220102340981572506A744&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=Mzt2ZnFzeXRkNDMzZDczM0ApNTdlZDY1Z2RlNzw6OmQzOGdxbDAwLWhmNjRgLS1eMTRzc2NfLWAwMF4yLWFfLy4vMTQ6Yw%3D%3D&vl=&vr=")
+    if 'tictok' in incoming_msg:
+        import requests
+        import json 
+        urls=incoming_msg
+        url="https://api.tiktokmultidownloader.com/v1/get?url="+urls
+        res=requests.get(url)
+        link=res.text
+        real_res = json.loads(link) 
+        msg.body(real_res['data']['video']['url'])
         
     if 'pypdf' in incoming_msg.lower():
         from googlesearch import search
