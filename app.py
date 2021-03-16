@@ -43,18 +43,18 @@ def bot():
         msg.body(text)
         responded = True
 
-    if 'https://www.facebook.com' in incoming_msg.lower():
+    if '/fcb' in incoming_msg.lower():
         import requests as r
         import re
-        par = incoming_msg
+        par = incoming_msg[3:]
         html = r.get(par)
         video_url = re.search('sd_src:"(.+?)"', html.text).group(1)
         msg.body(video_url)
         responded = True
-    if 'https://youtu.be' in incoming_msg.lower():
+    if '/yb' in incoming_msg.lower():
         
         from pytube import YouTube
-        link = incoming_msg
+        link = incoming_msg[3:]
         yt = YouTube(link)
         print("Title: ",yt.title)
         print("Length of video: ",yt.length)
@@ -90,8 +90,17 @@ def bot():
         link=res.text
         real_res = json.loads(link) 
         msg.media(real_res['data']['video']['url'])
-    if "yttt" in incoming_msg:
-        msg.body("https://api3.youtube-mp3.org.in/@download/8a1ffc363d6a231a5a909369d909af84843a3ee2894684417d97b2784c78acd4?bypass=false&bypass2=false")
+    if "/yt" in incoming_msg:
+        import requests
+        import json
+        url_part=incoming_msg[3:]
+        url_part=url_part.split("/")[-1]
+        url="https://api3.youtube-mp3.org.in/@video/"+url_part+"?bypass=false&bypass2=false"
+        res=requests.get(url)
+        output=res.text
+        res = json.loads(output)
+        x=res['url']
+        msg.body(x)
         
     if 'pypdf' in incoming_msg.lower():
         from googlesearch import search
