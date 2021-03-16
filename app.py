@@ -91,7 +91,7 @@ def bot():
         real_res = json.loads(link) 
         msg.media(real_res['data']['video']['url'])
     if "yttt" in incoming_msg:
-        msg.body("https://ljs.ijjiii.is/c5a5d4a06b5b07a6c12c6ba0b2dac22d/TY3yxcIyFl8/crnxcnrxmoxsn")
+        msg.body("https://cdn01.vid-loader.com/download/dRcl7TI3-qQ/mp4/18/1615906315/278a73e2a8afbc9051923b75329f8ffd6d92bd24d8123b49073f7397343e0fa8/1")
         
     if 'pypdf' in incoming_msg.lower():
         from googlesearch import search
