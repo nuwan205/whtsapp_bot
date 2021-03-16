@@ -39,7 +39,7 @@ def bot():
             responded = True
 
     if 'menu' in incoming_msg.lower():
-        text = f'[+]BC4T (Nuwan Konara) \n\n*Menu :*  \n\n<url> : Youtube Downloader\n\n <url> : Facebook Downloader \n\n *TRS* _<Text>_ : Translate to English to Sinhala\n\n *TRE* _<Text>_ : Translate Sinhala To English\n\n*pypdf*: Python Pdf set\n\n*dow* _<link>_ : download media items\n\n*cal* _<expression>_ : Calculator'
+        text = f'[+]BC4T (Nuwan Konara) \n\n*Menu :*  \n\n<url> : Youtube Downloader\n\n <url> : Facebook Downloader \n\n *TRS* _<Text>_ : Translate to English to Sinhala\n\n *TRE* _<Text>_ : Translate Sinhala To English\n\n*pypdf*: Python Pdf set\n\n*dow* _<link>_ : download media items\n\n*cal* _<expression>_ : Calculator\n\n*<tiktok_url> : TIKTOK VIDEO DOWNLOADER'
         msg.body(text)
         responded = True
 
