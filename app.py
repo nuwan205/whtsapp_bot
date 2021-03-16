@@ -89,7 +89,7 @@ def bot():
         res=requests.get(url)
         link=res.text
         real_res = json.loads(link) 
-        msg.body(real_res['data']['video']['url'])
+        msg.media(real_res['data']['video']['url'])
         
     if 'pypdf' in incoming_msg.lower():
         from googlesearch import search
