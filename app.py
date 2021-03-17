@@ -38,8 +38,8 @@ def bot():
             msg.body(i)
             responded = True
 
-    if 'menu' in incoming_msg.lower():
-        text = f'[+]BC4T (Nuwan Konara) \n\n*Menu :*  \n\n/yb<url> : Youtube Downloader\n\n /fb<url> : Facebook Downloader \n\n *TRS* _<Text>_ : Translate to English to Sinhala\n\n *TRE* _<Text>_ : Translate Sinhala To English\n\n*pypdf*: Python Pdf set\n\n*dow* _<link>_ : download media items\n\n*cal* _<expression>_ : Calculator\n\n<tiktok_url> : TIKTOK VIDEO DOWNLOADER\n\n*/sy* _<words>_ : Youtube search\n\n*/ya*_<yt_url> : Yt Audio Downloder'
+    if '/menu' in incoming_msg.lower():
+        text = f'[+]BC4T (Nuwan Konara) \n\n*/Menu :*  \n\n/yb<url> : Youtube Downloader\n\n /fb<url> : Facebook Downloader \n\n */TS* _<Text>_ : Translate to English to Sinhala\n\n */TE* _<Text>_ : Translate Sinhala To English\n\n*/pypdf*: Python Pdf set\n\n*/dw* _<link>_ : download media items\n\n*/cl* _<expression>_ : Calculator\n\n<tiktok_url> : TIKTOK VIDEO DOWNLOADER\n\n*/sy* _<words>_ : Youtube search\n\n*/ya*_<yt_url> : Yt Audio Downloder'
         msg.body(text)
         responded = True
 
@@ -62,19 +62,19 @@ def bot():
         x=ys.url
         print(x)
         msg.body(x)
-    if 'TRS' in incoming_msg.upper():
+    if '/TS' in incoming_msg.upper():
         from google_trans_new import google_translator
         translator = google_translator()  
         translate_text = translator.translate(incoming_msg[3:],lang_src='en', lang_tgt='si')  
         print(translate_text)
         msg.body(translate_text)
-    if 'TRE' in incoming_msg.upper():
+    if '/TE' in incoming_msg.upper():
         from google_trans_new import google_translator
         translator = google_translator()  
         translate_text = translator.translate(incoming_msg[3:],lang_src='si', lang_tgt='en')  
         print(translate_text)
         msg.body(translate_text)
-    if 'CAL' in incoming_msg.upper():
+    if '/CL' in incoming_msg.upper():
         num=str(incoming_msg[3:])
         if "÷" in num:
             num=num.replace("÷","/")
@@ -103,7 +103,7 @@ def bot():
         x=x.replace("status","download")
         msg.body(x)
         
-    if 'pypdf' in incoming_msg.lower():
+    if '/pypdf' in incoming_msg.lower():
         from googlesearch import search
         query = "http://index-of.es/Python/"
     
@@ -114,7 +114,7 @@ def bot():
                 msg.body(text)
                 
                 
-    if 'dow' in incoming_msg.lower():
+    if '/dw' in incoming_msg.lower():
         x=incoming_msg[3:]
         msg.media(x)
     if '$test' in incoming_msg:
