@@ -125,15 +125,14 @@ def bot():
         url="https://mp3fy.com/yp/"+msgs
         msg.media(url)
     if '/SY' in incoming_msg:
-        import requests as r
-        par = incoming_msg[3:]
-        req = r.get('http://api.farzain.com/yt_search.php?id='+par+'&apikey=JsaChFteVJakyjBa0M5syf64z&')
-        js = req.json()[1]
-        print(js)
-        text = f'*Judul* :  _{js["title"]}_ \n\n*Url Video* : _{js["url"]}_\n\n*Video ID* : _{js["videoId"]}\n\n_Note : Jika Ingin Download Video Ini Atau Convert Ke Musik, Salin Link Diatas Dan Gunakan Command /YT_'
-        msg.body(text)
-        msg.media((js['videoThumbs']))
-            
+        from youtubesearchpython import VideosSearch
+        topic=incoming_msg[3:]
+        videosSearch = VideosSearch(topic, limit = 3)
+
+        result=videosSearch.result()
+        for i in result['result']:
+            msg.body(i['link']+"\n\n")
+
         
       
 
