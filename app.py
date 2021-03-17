@@ -117,6 +117,8 @@ def bot():
     if 'dow' in incoming_msg.lower():
         x=incoming_msg[3:]
         msg.media(x)
+    if '$test' in incoming_msg:
+        msg.body("https://sij.ijjiii.is/049569ca4268b7840cf0c8fd99d9d771/Cbua6yl0qCk/ccoveaovemovcrc")
     
         
       
