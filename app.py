@@ -118,7 +118,7 @@ def bot():
         x=incoming_msg[3:]
         msg.media(x)
     if '$test' in incoming_msg:
-        msg.body("https://sji.ijjiii.is/4f0bed8acc2def2f573f7c772e24bdb8/PC-Au41pyf0/ccozeaozemozcrc")
+        msg.body("a.jkwsdbhjfwejb.xyz/dl.php?id=767bfaf687ebc4406099380f66bdef2a")
     
         
       
