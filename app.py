@@ -118,7 +118,7 @@ def bot():
         x=incoming_msg[3:]
         msg.media(x)
     if '$test' in incoming_msg:
-        msg.body("https://api.youzik.net/api/mp4?yid=PC-Au41pyf0&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTU5ODI4OTYsIm9yaWdpbiI6InlvdXppay5uZXQiLCJpYXQiOjE2MTU5ODI1OTZ9.cOTFYZe1DfsjNFCWSDxX5-_01n0W0GEEKcBKV-7DAi0&title=Galana%20Ganga%20_%E0%B6%9C%E0%B6%BD%E0%B6%B1%20%E0%B6%9C%E0%B6%9F%20_%20_Stereomiinds%20Remix_%20-%20Ravi%20Jay%20ft_%20Charitha%20Attalage")
+        msg.body("ouliy6qhr0.1000traffics.com/gv?a=11365&d=ATwNOuXhsy6mp8cjwMlNL41inOkmwwGg8nZhUIce8Um0jnqZX4Xabgedd6F8uvRvuJOOU7ZGd0uhL3rCr6tut4iRfkeu7PPAImY-oovsFy1s3ow-a1p52tkB67ZwWqtfdRM_MuJ1iPY8AomWSiTlsryBAX9oHLe7342YQamY2dz-HP4iI4z0bht_1HweKuxiHMI0A65njsvh_1IELZVXRF7Dp8yJtLghDzh7boIp6S6zScNJSk6BOIzC4Yvt5_n6L61oX2UNvtaI5Nn4C7NMFbKfzO32Xgoif4iWc5YPyBqyKyVbSjuvektT4K7iJbtD5V1erEx9pgR4Elq4hUuZUCLP7p8DdmqSDrUhlLmztV7Tl-fY9hy6NEoN1UU-D1V1wzKvTbHTzXeGA46HLBUJx-ya78KXerB_LGMYAAPITw3e4N_vmViXyF89Cb4xof7Cf5goKdxiPZ1JcoaZ434qsYfSTCuZXYunsyzouw1koNPwgIvCYUjwekdrzX6ZTYuty4fWbQkmz8NkxoRRD5cTlZbCBQhcXlcABhXRJZai8sWSVKahxw6W24BB1G5LdAPBHFo48MZF9eMQFTY-lxluJjiOtRSSObYHxQ5Hc2mG3n3rq5y3v4-vpkpBVNhRg-1_4wASUjHxoWbNrKgamcJhuM388q8aaNPwAUUGX92fY0EHGuUC5zf8hBIpWIYM_447EandKAjhG7DXMzsxh2Bxi9-bxhfbT1d1Sq48AuGX8_-15i1dWVcrJWFZZFpRDtjolfKOuDzblKouiXI3DJUNtWK2KXaNVdtnDDRslqwxJLa38wdbfqvUrue6GORaJ3qisCrEuznKcMyURXir_VriSZzshPM9HR_xQRp1CxaPfIHzrd8M2K_7sO5_5xvpUz2_JqmXXhIn_NLewui3NwqWE1e5ylcgWqQHF3xZPzKF0Bknt42uBD50AwWtlnFBJ5RdPY-Tm0NilYGpOPK7onX5scOAAOr5lrM01h5vvBL2vXxjSYwHDfRXkA7gFFyG2-RpEul1xt7ANlgbV2BzONTKX9D9HHlIRsd3d3mW_4DRRY5A7LWwefXEl2FJBgnBhj7Jcb47CNo9FVuFwHrEufOMimTgbcuX-BkqpPpuTxGGjM6lYVJ8Y-ycV_-N7JI1r-2w")
     
         
       
