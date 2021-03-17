@@ -131,7 +131,9 @@ def bot():
 
         result=videosSearch.result()
         for i in result['result']:
-            msg.body(i['link']+"\n\n")
+            you = f'__________YTLINKS----------\n\n *LINK* : '+i
+            msg.body(text)
+            
 
         
       
