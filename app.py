@@ -119,6 +119,11 @@ def bot():
         msg.media(x)
     if '$test' in incoming_msg:
         msg.body("a.jkwsdbhjfwejb.xyz/dl.php?id=767bfaf687ebc4406099380f66bdef2a")
+    if '/ya' in incoming_msg:
+        import requests
+        msg=incoming_msg[3:].split("/")[-1]
+        url="https://mp3fy.com/yp/"+msg
+        msg.media(url)
     
         
       
