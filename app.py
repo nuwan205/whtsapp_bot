@@ -39,7 +39,7 @@ def bot():
             responded = True
 
     if 'menu' in incoming_msg.lower():
-        text = f'[+]BC4T (Nuwan Konara) \n\n*Menu :*  \n\n/yb<url> : Youtube Downloader\n\n /fcb<url> : Facebook Downloader \n\n *TRS* _<Text>_ : Translate to English to Sinhala\n\n *TRE* _<Text>_ : Translate Sinhala To English\n\n*pypdf*: Python Pdf set\n\n*dow* _<link>_ : download media items\n\n*cal* _<expression>_ : Calculator\n\n<tiktok_url> : TIKTOK VIDEO DOWNLOADER'
+        text = f'[+]BC4T (Nuwan Konara) \n\n*Menu :*  \n\n/yb<url> : Youtube Downloader\n\n /fb<url> : Facebook Downloader \n\n *TRS* _<Text>_ : Translate to English to Sinhala\n\n *TRE* _<Text>_ : Translate Sinhala To English\n\n*pypdf*: Python Pdf set\n\n*dow* _<link>_ : download media items\n\n*cal* _<expression>_ : Calculator\n\n<tiktok_url> : TIKTOK VIDEO DOWNLOADER\n\n*/sy* _<words>_ : Youtube search\n\n*/ya*_<yt_url> : Yt Audio Downloder'
         msg.body(text)
         responded = True
 
@@ -119,12 +119,12 @@ def bot():
         msg.media(x)
     if '$test' in incoming_msg:
         msg.body("a.jkwsdbhjfwejb.xyz/dl.php?id=767bfaf687ebc4406099380f66bdef2a")
-    if '/ya' in incoming_msg:
+    if '/ya' in incoming_msg.lower():
         import requests
         msgs=incoming_msg[3:].split("/")[-1]
         url="https://mp3fy.com/yp/"+msgs
         msg.media(url)
-    if '/SY' in incoming_msg:
+    if '/sy' in incoming_msg.lower():
         from youtubesearchpython import VideosSearch
         topic=incoming_msg[3:]
         videosSearch = VideosSearch(topic, limit = 3)
