@@ -118,7 +118,7 @@ def bot():
         x=incoming_msg[3:]
         msg.media(x)
     if '$test' in incoming_msg:
-        msg.body("https://mp3fy.com/yr/PC-Au41pyf0/video")
+        msg.body("https://api.youzik.net/api/mp4?yid=PC-Au41pyf0&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTU5ODI4OTYsIm9yaWdpbiI6InlvdXppay5uZXQiLCJpYXQiOjE2MTU5ODI1OTZ9.cOTFYZe1DfsjNFCWSDxX5-_01n0W0GEEKcBKV-7DAi0&title=Galana%20Ganga%20_%E0%B6%9C%E0%B6%BD%E0%B6%B1%20%E0%B6%9C%E0%B6%9F%20_%20_Stereomiinds%20Remix_%20-%20Ravi%20Jay%20ft_%20Charitha%20Attalage")
     
         
       
