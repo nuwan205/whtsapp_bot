@@ -169,7 +169,7 @@ def bot():
 
         driver.get("https://ytmp3.cc/youtube-to-mp3/")
         inputbox = driver.find_element_by_id('input')
-        inputbox.send_keys(str("https://youtu.be/ps0U405nQE8"))
+        inputbox.send_keys(str(incoming_msg[3:]))
         button = driver.find_element_by_id('submit')
         button.click()
         dloadbut = driver.find_element_by_xpath("//*[contains(text(), 'Download')]")
