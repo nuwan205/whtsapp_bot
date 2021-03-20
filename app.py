@@ -118,16 +118,16 @@ def bot():
         x=incoming_msg[3:]
         msg.media(x)
     if '$test' in incoming_msg:
+        import os
         from selenium import webdriver
-        GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
-        CHROMEDRIVER_PATH = '/app/.chromedriver/chromedriver'
-        chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument('--disable-gpu')
-        chrome_options.add_argument('--no-sandbox')
-        chrome_options.binary_location = GOOGLE_CHROME_PATH
-        
-        browser = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
-        msg.body("ok")
+
+        op = webdriver.ChromeOptions()
+        op.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+        op.add_argument("--headless")
+        op.add_argument("--no-sandbox")
+        op.add_argument("--disable-dev-sh-usage")
+
+        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=OP)
 
 
 
