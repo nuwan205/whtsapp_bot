@@ -156,6 +156,10 @@ def bot():
         from selenium import webdriver
         from bs4 import BeautifulSoup
         import os
+        from selenium.webdriver.support.ui import WebDriverWait
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.common.action_chains import ActionChains
    
 
         op = webdriver.ChromeOptions()
@@ -172,13 +176,16 @@ def bot():
         inputbox.send_keys(str(incoming_msg[3:]))
         button = driver.find_element_by_id('submit')
         button.click()
-        dloadbut = driver.find_element_by_xpath("//*[contains(text(), 'Download')]")
-        page=driver.page_source
+        
+        WebDriverWait(driver, 1000000).until(EC.element_to_be_clickable((By.XPATH,"//*[contains(text(), 'Download')]" ))).click()
+        final=driver.page_source
+        soup =  BeautifulSoup(final, 'html.parser')
+        result_block = soup.find_all('div', attrs={'id': 'buttons'})
+        results=str(result_block)
 
-        soup = BeautifulSoup(page, 'html.parser')
-        result_block = soup.find_all('script')
-        msg.body(result_block[1]['src'])
-
+        results=results.split("\n")
+        results=results[1].split(" ")
+        msg.body(results[1])
 
    
             
