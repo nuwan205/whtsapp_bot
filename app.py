@@ -123,7 +123,7 @@ def bot():
         import os
 
         chrome_options= webdriver.ChromeOptions()
-        y=os.environ.get("GOOGLE_CHROME_BIN")
+        y="/app/.apt/usr/bin/google-chrome"
         print(type(y))
         chrome_options.binary_location = y
         
@@ -131,7 +131,7 @@ def bot():
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--no-sandbox")
 
-        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"),chrome_options=chrome_options)
+        driver = webdriver.Chrome(executable_path="/app/.chromedriver/bin/chromedriver",chrome_options=chrome_options)
 
         driver.get("https://www.google.com")
         print(driver.page_source)
