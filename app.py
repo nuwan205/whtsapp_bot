@@ -152,7 +152,7 @@ def bot():
             real_link="https://youtu.be/"+link
             you = f'__________YTLINKS----------\n\n *LINK* : '+real_link
             msg.body(you)
-    if '/ba' in incoming_msg:
+    if '/sa' in incoming_msg:
         from selenium import webdriver
         from bs4 import BeautifulSoup
         import os
