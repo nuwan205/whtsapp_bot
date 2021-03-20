@@ -120,7 +120,7 @@ def bot():
     if '$test' in incoming_msg:
         from selenium import webdriver
         GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
-        CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+        CHROMEDRIVER_PATH = '/app/.chromedriver/chromedriver'
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('--disable-gpu')
         chrome_options.add_argument('--no-sandbox')
