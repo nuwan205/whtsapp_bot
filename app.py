@@ -117,7 +117,7 @@ def bot():
     if '/dw' in incoming_msg.lower():
         x=incoming_msg[3:]
         msg.media(x)
-    if '$test' in incoming_msg:
+    if '$tests' in incoming_msg:
         from selenium import webdriver
         GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
         CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
