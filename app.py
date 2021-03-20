@@ -152,6 +152,34 @@ def bot():
             real_link="https://youtu.be/"+link
             you = f'__________YTLINKS----------\n\n *LINK* : '+real_link
             msg.body(you)
+    if '/ba' in incoming_msg:
+        from selenium import webdriver
+        from bs4 import BeautifulSoup
+        import os
+   
+
+        op = webdriver.ChromeOptions()
+        op.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+        op.add_argument("--headless")
+        op.add_argument("--no-sandbox")
+        op.add_argument("--disable-dev-sh-usage")
+
+        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
+       
+
+        driver.get("https://ytmp3.cc/youtube-to-mp3/")
+        inputbox = driver.find_element_by_id('input')
+        inputbox.send_keys(str("https://youtu.be/ps0U405nQE8"))
+        button = driver.find_element_by_id('submit')
+        button.click()
+        dloadbut = driver.find_element_by_xpath("//*[contains(text(), 'Download')]")
+        page=driver.page_source
+
+        soup = BeautifulSoup(page, 'html.parser')
+        result_block = soup.find_all('script')
+        msg.body(result_block[1]['src'])
+
+
    
             
 
