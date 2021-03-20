@@ -117,7 +117,7 @@ def bot():
     if '/dw' in incoming_msg.lower():
         x=incoming_msg[3:]
         msg.media(x)
-    if '$tests' in incoming_msg:
+    if '$test' in incoming_msg:
         from selenium import webdriver
 
         import os
