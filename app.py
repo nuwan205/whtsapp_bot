@@ -132,6 +132,8 @@ def bot():
 
         browser.get("https://www.google.com")
         print(browser.page_source)
+    if "11" in incoming_msg:
+        msg.body("ok")
     if '/ya' in incoming_msg.lower():
         import requests
         msgs=incoming_msg[3:].split("/")[-1]
