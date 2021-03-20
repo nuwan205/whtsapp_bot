@@ -134,7 +134,7 @@ def bot():
 
         browser.get("https://www.google.com")
         print(browser.page_source)
-    if "yyy" in incoming_msg:
+    if "yy" in incoming_msg:
         msg.body("ok")
     if '/ya' in incoming_msg.lower():
         import requests
