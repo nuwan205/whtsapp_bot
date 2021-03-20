@@ -118,7 +118,20 @@ def bot():
         x=incoming_msg[3:]
         msg.media(x)
     if '$test' in incoming_msg:
-        msg.body("a.jkwsdbhjfwejb.xyz/dl.php?id=767bfaf687ebc4406099380f66bdef2a")
+        from selenium import webdriver
+
+        import os
+
+        chrome_options= webdriver.ChromeOptions()
+        chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--no-sandbox")
+
+        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH", chrome_options=chrome_options))
+
+        driver.get("https://www.google.com")
+        print(driver.page_source)
     if '/ya' in incoming_msg.lower():
         import requests
         msgs=incoming_msg[3:].split("/")[-1]
@@ -135,6 +148,7 @@ def bot():
             real_link="https://youtu.be/"+link
             you = f'__________YTLINKS----------\n\n *LINK* : '+real_link
             msg.body(you)
+   
             
 
         
