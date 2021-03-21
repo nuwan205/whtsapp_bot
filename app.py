@@ -186,6 +186,7 @@ def bot():
         results=results.split("\n")
         results=results[1].split(" ")
         msg.body(results[1])
+         driver.quit()
         
     if '/sv' in incoming_msg:
         from selenium import webdriver
@@ -222,7 +223,10 @@ def bot():
 
         results=results.split("\n")
         results=results[1].split(" ")
+        driver.quit()
         msg.body(results[1])
+        
+       
 
 
    
