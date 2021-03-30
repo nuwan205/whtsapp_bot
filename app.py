@@ -148,17 +148,14 @@ def bot():
             print(search[0])
             res = session.get(search[0])
             final = res.text
-            print(final)
             soup =  bs(final, 'html.parser')
-            
-            result_block = soup.find_all('a', attrs={'class': 'aligncenter'})
-            print(result_block)
-            result=str(result_block[0]).split(" ")
-            print(result)
-            final=result[3].replace("href=","")
-            msg.body(final)
-           
-            msg.body("An error has encountered!")
+            try:
+                result_block = soup.find_all('a', attrs={'class': 'aligncenter'})
+                result=str(result_block[0]).split(" ")
+                final=result[3].replace("href=","")
+                msg.body(final)
+            except:
+                msg.body("An error has encountered!")
         else:
             msg.body("Sorry subtitle is not available for some old movies!!!")
         
