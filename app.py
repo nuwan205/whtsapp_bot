@@ -149,7 +149,7 @@ def bot():
             soup =  bs(final, 'html.parser')
             
             result_block = soup.find_all('a', attrs={'class': 'aligncenter'})
-            print(result_blck)
+            print(result_block)
             result=str(result_block[0]).split(" ")
             print(result)
             final=result[3].replace("href=","")
