@@ -140,7 +140,8 @@ def bot():
         from googlesearch import search
         from bs4 import BeautifulSoup as bs
         import requests
-        search=search(incoming_msg[3:]+"piratelk sinhala subtitle download", num_results=1)
+        search=search(incoming_msg[3:]+"sinhala subtitle download piratelk", num_results=1)
+        print(search)
         if 'pirate' in search:
             print(search[0])
             res = requests.get(search[0])
