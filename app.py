@@ -150,6 +150,7 @@ def bot():
             
             result_block = soup.find_all('a', attrs={'class': 'aligncenter'})
             result=str(result_block[0]).split(" ")
+            print(result)
             final=result[3].replace("href=","")
             msg.body(final)
            
