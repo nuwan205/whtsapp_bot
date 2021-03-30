@@ -117,23 +117,7 @@ def bot():
     if '/dw' in incoming_msg.lower():
         x=incoming_msg[3:]
         msg.media(x)
-    if '$test' in incoming_msg:
-        import os
-        from selenium import webdriver
 
-        op = webdriver.ChromeOptions()
-        op.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-        op.add_argument("--headless")
-        op.add_argument("--no-sandbox")
-        op.add_argument("--disable-dev-sh-usage")
-
-        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
-
-
-
-
-        driver.get("https://www.google.com")
-        print(driver.page_source)
     if "yyy" in incoming_msg:
         msg.body("ok")
     if '/ya' in incoming_msg.lower():
@@ -172,46 +156,6 @@ def bot():
         else:
             msg.body("Sorry subtitle is not available for some old movies!!!")
         
-    if '/sv' in incoming_msg:
-        from selenium import webdriver
-        from bs4 import BeautifulSoup
-        import os
-        from selenium.webdriver.support.ui import WebDriverWait
-        from selenium.webdriver.common.by import By
-        from selenium.webdriver.support import expected_conditions as EC
-        from selenium.webdriver.common.action_chains import ActionChains
-   
-
-        op = webdriver.ChromeOptions()
-        op.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-        op.add_argument("--headless")
-        op.add_argument("--no-sandbox")
-        op.add_argument("--disable-dev-sh-usage")
-
-        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
-       
-
-        driver.get("https://ytmp3.cc/youtube-to-mp3/")
-        mp4=inputbox = driver.find_element_by_id('mp4')
-        mp4.click()
-        inputbox = driver.find_element_by_id('input')
-        inputbox.send_keys(str(incoming_msg[3:]))
-        button = driver.find_element_by_id('submit')
-        button.click()
-        
-        WebDriverWait(driver, 1000000).until(EC.element_to_be_clickable((By.XPATH,"//*[contains(text(), 'Download')]" ))).click()
-        final=driver.page_source
-        soup =  BeautifulSoup(final, 'html.parser')
-        result_block = soup.find_all('div', attrs={'id': 'buttons'})
-        results=str(result_block)
-
-        results=results.split("\n")
-        results=results[1].split(" ")
-        driver.quit()
-        msg.body(results[1])
-        
-       
-
 
    
             
