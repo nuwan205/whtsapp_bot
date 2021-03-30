@@ -152,42 +152,25 @@ def bot():
             real_link="https://youtu.be/"+link
             you = f'__________YTLINKS----------\n\n *LINK* : '+real_link
             msg.body(you)
-    if '/sa' in incoming_msg:
-        from selenium import webdriver
-        from bs4 import BeautifulSoup
-        import os
-        from selenium.webdriver.support.ui import WebDriverWait
-        from selenium.webdriver.common.by import By
-        from selenium.webdriver.support import expected_conditions as EC
-        from selenium.webdriver.common.action_chains import ActionChains
-   
-
-        op = webdriver.ChromeOptions()
-        op.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-        op.add_argument("--headless")
-        op.add_argument("--no-sandbox")
-        op.add_argument("--disable-dev-sh-usage")
-
-        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
-       
-
-        driver.get("https://ytmp3.cc/youtube-to-mp3/")
-        inputbox = driver.find_element_by_id('input')
-        inputbox.send_keys(str(incoming_msg[3:]))
-        button = driver.find_element_by_id('submit')
-        button.click()
-        
-        WebDriverWait(driver, 1000000).until(EC.element_to_be_clickable((By.XPATH,"//*[contains(text(), 'Download')]" ))).click()
-        final=driver.page_source
-        soup =  BeautifulSoup(final, 'html.parser')
-        result_block = soup.find_all('div', attrs={'id': 'buttons'})
-        results=str(result_block)
-
-        results=results.split("\n")
-        results=results[1].split(" ")
-        driver.quit()
-        msg.body(results[1])
-         
+    if '/sd' in incoming_msg:
+        from googlesearch import search
+        from bs4 import BeautifulSoup as bs
+        import requests
+        search=search(incoming_msg[3:]+"piratelk sinhala subtitle download", num_results=1)
+        if 'pirate' in search:
+            print(search[0])
+            res = requests.get(search[0])
+            final = res.text
+            soup =  bs(final, 'html.parser')
+            try:
+                result_block = soup.find_all('a', attrs={'class': 'aligncenter'})
+                result=str(result_block[0]).split(" ")
+                final=result[3].replace("href=","")
+                msg.body(final)
+            except:
+                msg.body("An error has encountered!")
+        else:
+            msg.body("Sorry subtitle is not available for some old movies!!!")
         
     if '/sv' in incoming_msg:
         from selenium import webdriver
