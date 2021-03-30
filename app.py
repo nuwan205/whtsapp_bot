@@ -146,6 +146,7 @@ def bot():
             print(search[0])
             res = requests.get(search[0])
             final = res.text
+            print(final)
             soup =  bs(final, 'html.parser')
             
             result_block = soup.find_all('a', attrs={'class': 'aligncenter'})
