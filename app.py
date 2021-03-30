@@ -139,12 +139,14 @@ def bot():
     if '/sd' in incoming_msg:
         from googlesearch import search
         from bs4 import BeautifulSoup as bs
-        import requests
+        from requests_html import HTMLSession
+        session = HTMLSession()
+
         search=search(incoming_msg[3:]+"sinhala subtitle download piratelk", num_results=1)
         print(search)
         if 'pirate' in search[0]:
             print(search[0])
-            res = requests.get(search[0])
+            res = session.get(search[0])
             final = res.text
             print(final)
             soup =  bs(final, 'html.parser')
