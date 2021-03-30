@@ -142,7 +142,7 @@ def bot():
         import requests
         search=search(incoming_msg[3:]+"sinhala subtitle download piratelk", num_results=1)
         print(search)
-        if 'pirate' in search:
+        if 'pirate' in search[0]:
             print(search[0])
             res = requests.get(search[0])
             final = res.text
