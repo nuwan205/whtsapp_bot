@@ -39,7 +39,7 @@ def bot():
             responded = True
 
     if '/menu' in incoming_msg.lower():
-        text = f'[+]BC4T (Nuwan Konara) \n\n*/Menu :*  \n\n/yb<url> : Youtube Downloader\n\n /fb<url> : Facebook Downloader \n\n */TS* _<Text>_ : Translate to English to Sinhala\n\n */TE* _<Text>_ : Translate Sinhala To English\n\n*/pypdf*: Python Pdf set\n\n*/dw* _<link>_ : download media items\n\n*/cl* _<expression>_ : Calculator\n\n<tiktok_url> : TIKTOK VIDEO DOWNLOADER\n\n*/sy* _<words>_ : Youtube search\n\n*/ya*_<yt_url> : Yt Audio Downloder\n\n*/sd* <movie name> : Sinhala Subtitle downloader'
+        text = f'[+]BC4T (Nuwan Konara) \n\n*/Menu :*  \n\n/yb<url> : Youtube Downloader\n\n /fb<url> : Facebook Downloader \n\n */TS* _<Text>_ : Translate to English to Sinhala\n\n */TE* _<Text>_ : Translate Sinhala To English\n\n*/pypdf*: Python Pdf set\n\n*/dw* _<link>_ : download media items\n\n*/cl* _<expression>_ : Calculator\n\n<tiktok_url> : TIKTOK VIDEO DOWNLOADER\n\n*/sy* _<words>_ : Youtube search\n\n*/ya*_<yt_url> : Yt Audio Downloder\n\n*/sd* <movie name> : Sinhala Subtitle downloader\n\n*/ml* <movie name> : Movie Links \n\n*/mu* <movie name> : Top Newest Movie List'
         msg.body(text)
         responded = True
 
@@ -190,7 +190,7 @@ def bot():
                                 v=0
                                 if x in str(i):
                                     i=str(i).split(" ")[1].replace("href=","")
-                                    you = f'__________YTLINKS----------\n\n *LINK* : '+str(i)
+                                    you = f'__________Movie Links----------\n\n *LINK* : '+str(i)
                                     print(you)
                                     msg.body(you)
                                     v+=1
@@ -210,20 +210,27 @@ def bot():
                             break
             except:
                 msg.body("An error has encountered")
-        
-    
-        
-
-
-        
-  
-   
-
-
-           
 
         else:
             msg.body("Sorry some links is not available for some old movies!!!")
+    if "/mu" in incoming_msg:
+        from googlesearch import search
+        from bs4 import BeautifulSoup as bs
+
+        from requests_html import HTMLSession
+        session = HTMLSession()
+
+
+        res = session.get("https://piratelk.com/category/%E0%B7%84%E0%B7%9C%E0%B6%B3%E0%B6%B8-%E0%B6%A0%E0%B7%92%E0%B6%AD%E0%B7%8A%E2%80%8D%E0%B6%BB%E0%B6%B4%E0%B6%A7/")
+        final = res.text
+        soup =  bs(final, 'html.parser'you
+        links = soup.find_all('h2',attrs={"class":"post-box-title"})
+        for i in links:
+            i=str(i).split('/">')[1].replace("</a>\n</h2>","")
+            you = f'__________TOP Movie list----------\n\n *LINK* : '+i
+            msg.body(o)
+            
+    
 
             
         
