@@ -167,7 +167,7 @@ def bot():
 
 
 
-        search=search("Silence: Can You Hear It subtitle download piratelk", num_results=1)
+        search=search(incoming_msg[3:]+"subtitle download piratelk", num_results=1)
         print(search)
         if 'pirate' in search[0]:
             print(search[0])
@@ -212,8 +212,8 @@ def bot():
 
            
 
-else:
-    print("Sorry subtitle is not available for some old movies!!!")
+        else:
+            print("Sorry subtitle is not available for some old movies!!!")
 
             
         
