@@ -227,7 +227,7 @@ def bot():
         links = soup.find_all('h2',attrs={"class":"post-box-title"})
         for i in links:
             i=str(i).split('/">')[1].replace("</a>\n</h2>","")
-            you = f'__________TOP Movie list----------\n\n *LINK* : '+i
+            you = f'__________TOP Movie list----------\n\n *Yeah Boy* : '+i
             msg.body(you)
             
     
