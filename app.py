@@ -167,7 +167,7 @@ def bot():
 
 
 
-        search=search(incoming_msg[3:]+"piratelk.com", num_results=1)
+        search=search("piratelk.com"+incoming_msg[3:], num_results=1)
         print(search)
         if 'pirate' in search[0]:
             print(search[0])
