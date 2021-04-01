@@ -183,7 +183,7 @@ def bot():
                     links_li=[]
                     for i in result_links:
                         links = i.find_all('a',attrs={"rel":"noopener noreferrer"})
-                        servers=["https://racaty.net","https://megaup.net","https://clicknupload.org","https://drive.google.com","https://mega.nz"]
+                        servers=["https://racaty.net","https://megaup.net","https://clicknupload.org","https://drive.google.com","https://mega.nz","https://usersdrive.com","verystream.com"]
     
                         for i in links:
                             for x in servers:
