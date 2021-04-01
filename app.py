@@ -158,6 +158,65 @@ def bot():
                 msg.body("An error has encountered!")
         else:
             msg.body("Sorry subtitle is not available for some old movies!!!")
+    if "/ml" in incoming_msg:
+        from googlesearch import search
+        from bs4 import BeautifulSoup as bs
+
+        from requests_html import HTMLSession
+        session = HTMLSession()
+
+
+
+        search=search("Silence: Can You Hear It subtitle download piratelk", num_results=1)
+        print(search)
+        if 'pirate' in search[0]:
+            print(search[0])
+            res = session.get(search[0])
+            final = res.text
+            soup =  bs(final, 'html.parser')
+            print(type(soup))
+            try:
+            
+                result_block = soup.find_all('a', attrs={'class': 'su-button su-button-style-default'})
+                if len(result_block)==0:
+                    result_links=soup.find_all('p')
+                    links_li=[]
+                    for i in result_links:
+                        links = i.find_all('a',attrs={"rel":"noopener noreferrer"})
+                        servers=["https://racaty.net","https://megaup.net","https://clicknupload.org","https://drive.google.com","https://mega.nz"]
+    
+                        for i in links:
+                            for x in servers:
+                                if x in str(i):
+                                    you = f'__________YTLINKS----------\n\n *LINK* : '+str(i)
+                                    print(you)
+                                    msg.body(you)
+                else:
+                    for i in result_block:
+                        i=str(i).replace('rel="noopener noreferrer" style="color:#FFFFFF;background-color:#2D89EF;border-color:#246ec0;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px" target="_blank"><span style="color:#FFFFFF;padding:6px 16px;font-size:13px;line-height:20px;border-color:#6cadf4;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none"><i class="sui sui-arrow-circle-down" style="font-size:13px;color:#FFFFFF"></i> ',"")
+                        i=i.split(" ")[3].replace("href=","")
+                        you = f'__________Movie links----------\n\n *LINK* : '+i
+                        print(you)
+                        msg.body(you)
+            except:
+                msg.body("An error has encountered")
+        
+    
+        
+
+
+        
+  
+   
+
+
+           
+
+else:
+    print("Sorry subtitle is not available for some old movies!!!")
+
+            
+        
         
 
    
