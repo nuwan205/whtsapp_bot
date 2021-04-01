@@ -189,6 +189,7 @@ def bot():
                             for x in servers:
                                 v=0
                                 if x in str(i):
+                                    i=str(i).split(" ")[1].replace("href=","")
                                     you = f'__________YTLINKS----------\n\n *LINK* : '+str(i)
                                     print(you)
                                     msg.body(you)
