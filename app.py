@@ -223,12 +223,12 @@ def bot():
 
         res = session.get("https://piratelk.com/category/%E0%B7%84%E0%B7%9C%E0%B6%B3%E0%B6%B8-%E0%B6%A0%E0%B7%92%E0%B6%AD%E0%B7%8A%E2%80%8D%E0%B6%BB%E0%B6%B4%E0%B6%A7/")
         final = res.text
-        soup =  bs(final, 'html.parser'you
+        soup =  bs(final, 'html.parser')
         links = soup.find_all('h2',attrs={"class":"post-box-title"})
         for i in links:
             i=str(i).split('/">')[1].replace("</a>\n</h2>","")
             you = f'__________TOP Movie list----------\n\n *LINK* : '+i
-            msg.body(o)
+            msg.body(you)
             
     
 
