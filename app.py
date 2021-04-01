@@ -195,7 +195,7 @@ def bot():
                                     msg.body(you)
                                     v+=1
                                     
-                                    if v>=7:
+                                    if v>=6:
                                         break
                 else:
                     v=0
@@ -206,7 +206,7 @@ def bot():
                         print(you)
                         msg.body(you)
                         v+=1
-                        if v>=7:
+                        if v>=6:
                             break
             except:
                 msg.body("An error has encountered")
@@ -223,7 +223,7 @@ def bot():
            
 
         else:
-            print("Sorry some links is not available for some old movies!!!")
+            msg.body("Sorry some links is not available for some old movies!!!")
 
             
         
