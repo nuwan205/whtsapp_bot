@@ -194,18 +194,18 @@ def bot():
                                     msg.body(you)
                                     v+=1
                                     
-                                    if v>=5:
+                                    if v>=7:
                                         break
                 else:
                     v=0
                     for i in result_block:
                         i=str(i).replace('rel="noopener noreferrer" style="color:#FFFFFF;background-color:#2D89EF;border-color:#246ec0;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px" target="_blank"><span style="color:#FFFFFF;padding:6px 16px;font-size:13px;line-height:20px;border-color:#6cadf4;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none"><i class="sui sui-arrow-circle-down" style="font-size:13px;color:#FFFFFF"></i> ',"")
-                        i=i.split(" ")[3].replace("href=","")+i.split(" ")[4]
+                        i=i.split(" ")[3].replace("href=","")+i.split(" ")[4]+i.split(" ")[5]
                         you = f'__________Movie links----------\n\n *LINK* : '+i
                         print(you)
                         msg.body(you)
                         v+=1
-                        if v>=5:
+                        if v>=7:
                             break
             except:
                 msg.body("An error has encountered")
