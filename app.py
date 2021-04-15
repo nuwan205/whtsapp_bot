@@ -243,7 +243,7 @@ def bot():
                 if i.text.strip():
                     words.append(i.text.strip())
             for i in enumerate((words),start=1):
-                you = f'Suggetion\n\n *------->* : '+str(i[0])+'.'+i[1]
+                you = f'Suggetion*------->* : '+str(i[0])+'.'+i[1]+"\n\n "
                 msg.body(you)
 
 		
@@ -254,7 +254,7 @@ def bot():
                 if i.text.strip():
                     words.append(i.text.strip())
             for i in enumerate((words),start=1):
-                you = f'Mean\n\n *------->* : '+str(i[0])+'.'+i[1]
+                you = f'*------->* : '+str(i[0])+'.'+i[1]+"\n\n "
                 msg.body(you)
 		
                 
