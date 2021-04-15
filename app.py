@@ -266,7 +266,7 @@ def bot():
 			        for i in enumerate((words),start=1):
 				        print(str(i[0])+'.'+i[1])
 		        else:
-			        print('[!] No Resultss')
+			        print('[!] No Results')
 			
 
 	        except KeyboardInterrupt:
