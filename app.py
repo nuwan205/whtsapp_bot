@@ -87,9 +87,9 @@ def bot():
         	#123
 	    from bs4 import BeautifulSoup as bsp
 	    from requests import get
-	words = []
-	search = incoming_msg[3:]
-	html = get('https://www.maduraonline.com',params={'find':search}).text
+	    words = []
+	    search = incoming_msg[3:]
+	    html = get('https://www.maduraonline.com',params={'find':search}).text
 
 	if "Did you mean?" in html:
 	    print("Not found!!!These are suggetions")
