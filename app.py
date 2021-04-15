@@ -240,8 +240,9 @@ def bot():
 
         def req_soup(search):
 	        html = get('https://www.maduraonline.com',params={'find':search}).text
-	        global soup
+	        
 	        soup = bsp(html,'html.parser')
+		global soup
         def is_res():
 	        if soup.find('p',class_='pt'):
 		        for i in soup.find_all('td',class_='td'):
