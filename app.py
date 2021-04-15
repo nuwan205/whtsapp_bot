@@ -3,7 +3,7 @@ import requests
 import json
 from twilio.twiml.messaging_response import MessagingResponse
 
-glo_links=""
+
 app = Flask(__name__)
 
 @app.route("/")
