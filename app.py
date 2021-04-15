@@ -246,7 +246,7 @@ def bot():
 			if soup.find('p',class_='pt'):
 				for i in soup.find_all('td',class_='td'):
 					words.append(i.text)
-					return False
+				return False
 			else:
 				return True
 		def res_scrape():
@@ -265,13 +265,14 @@ def bot():
 					for i in enumerate((words),start=1):
 						print(str(i[0])+'.'+i[1])
 				else:
-					print('[!] No Results')
+						print('[!] No Results')
 			
 
 			except KeyboardInterrupt:
 				exit()
 		if __name__ == '__main__':
 			main()
+
 
         
         
