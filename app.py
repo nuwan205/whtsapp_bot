@@ -267,8 +267,10 @@ def bot():
 			    	print(' [+] Results For Your Search: ')
 			    	for i in enumerate((words),start=1):
 				    	msg.body('\t'+str(i[0])+'.'+i[1])
+					print('\t'+str(i[0])+'.'+i[1])
 		    	else:
 			    	msg.body('[!] No Results')
+				print(1)
 			
 
 	    	except KeyboardInterrupt:
