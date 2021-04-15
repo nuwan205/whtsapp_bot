@@ -238,7 +238,7 @@ def bot():
                 msg.body("An error has encountered")
 
         else:
-            msg.body("Sorry some links is not available for some old movies!!!")
+            msg.body("Sorry some links is not available for some old movies!.!!")
     if "/mu" in incoming_msg:
         from googlesearch import search
         from bs4 import BeautifulSoup as bs
