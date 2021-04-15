@@ -257,7 +257,7 @@ def bot():
         def main():
 	        try:
 	
-		        search = input('[+] Enter The Word: ')
+		        search = incoming_msg[3:]
 		        req_soup(search)
 		        if is_res():
 			        res_scrape()
@@ -265,7 +265,7 @@ def bot():
 			        for i in enumerate((words),start=1):
 				        print(str(i[0])+'.'+i[1])
 		        else:
-			        print('[!] No Results')
+			        print('[!] No Resultss')
 			
 
 	        except KeyboardInterrupt:
