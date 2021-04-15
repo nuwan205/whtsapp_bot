@@ -83,42 +83,28 @@ def bot():
         msg.body(final)
 	
     if "/dt" in incoming_msg:
-        from bs4 import BeautifulSoup as bsp	
-	from requests import ge	t
-	from random import choice
-
+	from bs4 import BeautifulSoup as bsp
+	from requests import get
 	words = []
+	search = incoming_msg[3:]
+	html = get('https://www.maduraonline.com',params={'find':search}).text
 
-	def req_soup(search):
-	    html = get('https://www.maduraonline.com',params={'find':search}).text
-	    global soup
+	if "Did you mean?" in html:
+	    print("Not found!!!These are suggetions")
 	    soup = bsp(html,'html.parser')
-	def is_res():
-	    if soup.find('p',class_='pt'):
-	        for i in soup.find_all('td',class_='td'):
-		    words.append(i.text)
-		return False
-	else:
-	    return True
-	def res_scrape():
 	    for i in soup.find_all('td',class_='td'):
 		if i.text.strip():
 		    words.append(i.text.strip())
-
-	def main():
-	    try:
-	        search = incoming_msg[3:]
-		req_soup(search)
-		if is_res():
-		    res_scrape()
-		    print(' [+] Results For Your Search: ')
-		    for i in enumerate((words),start=1):
-			print(str(i[0])+'.'+i[1])
-	        else:
-		    print('[!] No Results')
-	    except KeyboardInterrupt:
-		exit()
-        main()
+	    for i in enumerate((words),start=1):
+		print(str(i[0])+'.'+i[1])
+	else:
+	    soup = bsp(html,'html.parser')
+	    for i in soup.find_all('td',class_='td'):
+		if i.text.strip():
+		    words.append(i.text.strip())
+	    for i in enumerate((words),start=1):
+		print(str(i[0])+'.'+i[1])
+			
     if 'tiktok' in incoming_msg:
         import requests
         import json 
