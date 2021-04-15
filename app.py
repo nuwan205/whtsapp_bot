@@ -254,7 +254,7 @@ def bot():
                 if i.text.strip():
                     words.append(i.text.strip())
             for i in enumerate((words),start=1):
-                you = f'__________Suggetions:----------\n\n *------->* : '+str(i[0])+'.'+i[1]
+                you = f'_________Suggetions:----------\n\n *------->* : '+str(i[0])+'.'+i[1]
                 msg.body(you)
 		
                 
