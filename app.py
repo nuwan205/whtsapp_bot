@@ -242,7 +242,7 @@ def bot():
 	        html = get('https://www.maduraonline.com',params={'find':search}).text
 	        
 	        soup = bsp(html,'html.parser')
-		global soup
+		    global soup
         def is_res():
 	        if soup.find('p',class_='pt'):
 		        for i in soup.find_all('td',class_='td'):
