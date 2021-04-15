@@ -233,48 +233,48 @@ def bot():
         
 
 
-    from bs4 import BeautifulSoup as bsp
+    	from bs4 import BeautifulSoup as bsp
 	
-    from requests import get
+    	from requests import get
 
-    from random import choice
+    	from random import choice
 
-    words = []
+    	words = []
 
-    def req_soup(search):
-	    html = get('https://www.maduraonline.com',params={'find':search}).text
-	    global soup
-	    soup = bsp(html,'html.parser')
-    def is_res():
-	    if soup.find('p',class_='pt'):
-		    for i in soup.find_all('td',class_='td'):
-			    words.append(i.text)
-		    return False
-	    else:
-		    return True
-    def res_scrape():
-	    for i in soup.find_all('td',class_='td'):
-		    if i.text.strip():
-			    words.append(i.text.strip())
+    	def req_soup(search):
+	    	html = get('https://www.maduraonline.com',params={'find':search}).text
+	    	global soup
+	    	soup = bsp(html,'html.parser')
+    	def is_res():
+	    	if soup.find('p',class_='pt'):
+		    	for i in soup.find_all('td',class_='td'):
+			    	words.append(i.text)
+		    	return False
+	    	else:
+		    	return True
+    	def res_scrape():
+	    	for i in soup.find_all('td',class_='td'):
+		    	if i.text.strip():
+			    	words.append(i.text.strip())
 
-    def main():
-	    try:
+    	def main():
+	    	try:
 	
-		    search = incoming_msg[3:]
-		    req_soup(search)
-		    if is_res():
-			    res_scrape()
-			    print(' [+] Results For Your Search: ')
-			    for i in enumerate((words),start=1):
-				    msg.body('\t'+str(i[0])+'.'+i[1])
-		    else:
-			    msg.body('[!] No Results')
+		    	search = incoming_msg[3:]
+		    	req_soup(search)
+		    	if is_res():
+			    	res_scrape()
+			    	print(' [+] Results For Your Search: ')
+			    	for i in enumerate((words),start=1):
+				    	msg.body('\t'+str(i[0])+'.'+i[1])
+		    	else:
+			    	msg.body('[!] No Results')
 			
 
-	    except KeyboardInterrupt:
-		    exit()
-    if __name__ == '__main__':
-	    main()
+	    	except KeyboardInterrupt:
+		    	exit()
+    	if __name__ == '__main__':
+	    	main()
     
 
             
