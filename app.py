@@ -230,9 +230,6 @@ def bot():
             you = f'__________TOP Movie list----------\n\n *Yeah Boy* : '+i
             msg.body(you)
     if "/dt" in incoming_msg:
-		
-
-
 		from bs4 import BeautifulSoup as bsp
 	
 		from requests import get
