@@ -83,7 +83,7 @@ def bot():
         msg.body(final)
 	
     if "/dt" in incoming_msg:
-        
+        	#123
 		from bs4 import BeautifulSoup as bsp
 		from requests import get
 		words = []
