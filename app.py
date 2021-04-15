@@ -31,8 +31,8 @@ def bot():
 
     responded = True
 
-    if 'start' in incoming_msg.lower():
-        text = "Helo how are you:::::Type menu for more"
+    if '/st' in incoming_msg.lower():
+        text = "Helo how are you:::::Type /menu for more"
         print(dir(msg))
         for i in i:
             msg.body(i)
