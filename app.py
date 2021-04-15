@@ -82,7 +82,7 @@ def bot():
         final=str(x)
         msg.body(final)
 	
-    if "/dt" incoming_msg:
+    if "/dt" in incoming_msg:
         from bs4 import BeautifulSoup as bsp	
 	from requests import ge	t
 	from random import choice
@@ -107,7 +107,7 @@ def bot():
 
 	def main():
 	    try:
-	        search = input('[+] Enter The Word: ')
+	        search = incoming_msg[3:]
 		req_soup(search)
 		if is_res():
 		    res_scrape()
