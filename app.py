@@ -246,10 +246,10 @@ def bot():
 	    	global soup
 	    	soup = bsp(html,'html.parser')
     	def is_res():
-	    	if soup.find('p',class_='pt'):
-		    	for i in soup.find_all('td',class_='td'):
+	    	if soup.find('p',class_='pt'):	       
+				for i in soup.find_all('td',class_='td'):
 			    	words.append(i.text)
-		    	return False
+		    		return False
 	    	else:
 		    	return True
     	def res_scrape():
@@ -266,12 +266,15 @@ def bot():
 			    	res_scrape()
 			    	print(' [+] Results For Your Search: ')
 			    	for i in enumerate((words),start=1):
-					print(0)
-				    	msg.body(str(i[0])+'.'+i[1])
+				    
+				    print(0)
+					
+				    msg.body(str(i[0])+'.'+i[1])
 					
 		    	else:
+			    
 			    	msg.body('[!] No Results')
-				print(1)
+			    	print(1)
 			
 
 	    	except KeyboardInterrupt:
