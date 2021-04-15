@@ -85,8 +85,8 @@ def bot():
 	
     if "/dt" in incoming_msg:
         	#123
-	from bs4 import BeautifulSoup as bsp
-	from requests import get
+	    from bs4 import BeautifulSoup as bsp
+	    from requests import get
 	words = []
 	search = incoming_msg[3:]
 	html = get('https://www.maduraonline.com',params={'find':search}).text
