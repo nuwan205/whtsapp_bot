@@ -232,6 +232,7 @@ def bot():
         from bs4 import BeautifulSoup as bsp
         from requests import get
         words=[]
+	search=incoming_msg[3:]
         html=get('https://www.maduraonline.com',params={'find':search}).text
 
         if "Did you mean?" in html:
@@ -241,14 +242,18 @@ def bot():
                 if i.text.strip():
                     words.append(i.text.strip())
             for i in enumerate((words),start=1):
-                print(str(i[0])+'.'+i[1])
+		you = f'__________Suggetions:----------\n\n *------->* : '+str(i[0])+'.'+i[1]
+		msg.body(you)
+               
         else:
             soup=bsp(html,"html.parser")
             for i in soup.find_all('td',class_='td'):
                 if i.text.strip():
                     words.append(i.text.strip())
             for i in enumerate((words),start=1):
-                print(str(i[0])+'.'+i[1])
+		you = f'__________Mean:----------\n\n *------->* : '+str(i[0])+'.'+i[1]
+		msg.body(you)
+                
 		
 
     
