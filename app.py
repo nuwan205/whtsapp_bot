@@ -93,19 +93,19 @@ def bot():
 
 	    if "Did you mean?" in html:
 	    	print("Not found!!!These are suggetions")
+	   	soup = bsp(html,'html.parser')
+	    	for i in soup.find_all('td',class_='td'):
+			if i.text.strip():
+		    		words.append(i.text.strip())
+	    	for i in enumerate((words),start=1):
+	        	print(str(i[0])+'.'+i[1])
+       """" else:
 	    soup = bsp(html,'html.parser')
 	    for i in soup.find_all('td',class_='td'):
 		if i.text.strip():
 		    words.append(i.text.strip())
 	    for i in enumerate((words),start=1):
-	        print(str(i[0])+'.'+i[1])
-        else:
-	    soup = bsp(html,'html.parser')
-	    for i in soup.find_all('td',class_='td'):
-		if i.text.strip():
-		    words.append(i.text.strip())
-	    for i in enumerate((words),start=1):
-		print(str(i[0])+'.'+i[1])
+		print(str(i[0])+'.'+i[1])"""
 			
     if 'tiktok' in incoming_msg:
         import requests
