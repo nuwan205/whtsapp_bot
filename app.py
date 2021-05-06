@@ -257,7 +257,7 @@ def bot():
                 you = f'*------->* : '+str(i[0])+'.'+i[1]+"\n\n "
                 msg.body(you)
     if '/ly' in incoming_msg:
-	print(1)
+	print(5)
 
     
   
