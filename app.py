@@ -257,32 +257,8 @@ def bot():
                 you = f'*------->* : '+str(i[0])+'.'+i[1]+"\n\n "
                 msg.body(you)
     if '/ly' in incoming_msg:
-	from googlesearch import search
-	from bs4 import BeautifulSoup as bs
-	from requests_html import HTMLSession
-	import requests
-	session = HTMLSession()
-	incoming_msg=input()
+	print(1)
 
-	search=search("songs hub.lk lyrics"+incoming_msg, num_results=1)
-	try:
-    	    if  "www.songhub.lk" in search[0]:
-        	lyrics=requests.get(search[0])
-        	soup =  bs(lyrics.text, 'html.parser')
-         	result_block = soup.find_all('div', attrs={'class': 'col-md-12'})
-        	print(result_block[3])
-        	x=result_block[3]
-        	soup =  bs(str(x), 'html.parser')
-        	result_block = soup.findAll('img')
-        	lista=result_block[0]['src']
-        	if len(lista)==0:
-            	    print("Sorry This lyrics is not exsist")
-    	    else:
-        	print("Sorry This Lyrics is not exsist.")
-	except:
-    	    print("an error has encounterd")
-                
-		
 
     
   
