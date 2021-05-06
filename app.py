@@ -278,13 +278,13 @@ def bot():
                 result_block = soup.findAll('img')
                 lista = str(result_block[0]['src'])
                 if len(lista) == 0:
-                    print("Sorry This lyrics is not exsist")
+                    msg.body("Sorry This lyrics is not exsist")
                 else:
                     msg.media(lista)
             else:
-                print("Sorry This Lyrics is not exsist.")
+                msg.body("Sorry This Lyrics is not exsist.")
         except:
-            print("an error has encounterd")
+            msg.body("an error has encounterd")
 
 
 
