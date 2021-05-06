@@ -259,7 +259,6 @@ def bot():
     if '/ly' in incoming_msg:
 	print(1)
 
-
     
   
     
