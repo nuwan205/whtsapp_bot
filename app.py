@@ -33,6 +33,9 @@ def bot():
         for i in i:
             msg.body(i)
             responded = True
+    if 'ss' in incoming_msg:
+        print(123456)
+        print(incoming_msg)
 
     if '/menu' in incoming_msg.lower():
         text = f'[+]BC4T (Nuwan Konara) \n\n*/Menu :*  \n\n/yb<url> : Youtube Downloader\n\n /fb<url> : Facebook Downloader \n\n */TS* _<Text>_ : Translate to English to Sinhala\n\n */TE* _<Text>_ : Translate Sinhala To English\n\n*/pypdf*: Python Pdf set\n\n*/dw* _<link>_ : download media items\n\n*/cl* _<expression>_ : Calculator\n\n<tiktok_url> : TIKTOK VIDEO DOWNLOADER\n\n*/sy* _<words>_ : Youtube search\n\n*/ya*_<yt_url> : Yt Audio Downloder\n\n*/sd* <movie name> : Sinhala Subtitle downloader\n\n*/ml* <movie name> : Movie Links \n\n*/mu*  : Top Newest Movie List\n\n*/dt*<word>  :Dictionary(Tool By Sandaru Ashen)\n\n*/ly*<Song Name>  :Songs Lyrics'
