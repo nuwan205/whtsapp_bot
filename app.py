@@ -23,7 +23,7 @@ def bot():
 
     resp = MessagingResponse()
     msg = resp.message()
-    print(msg)
+    print(resp)
 
     responded = True
   
