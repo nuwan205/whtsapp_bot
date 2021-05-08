@@ -19,6 +19,7 @@ def hello():
 def bot():
 
     incoming_msg = request.values.get('Body', '')
+    print(incoming_msg)
 
     resp = MessagingResponse()
     msg = resp.message()
