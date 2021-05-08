@@ -25,8 +25,7 @@ def bot():
     msg = resp.message()
 
     responded = True
-  
-    msg.media(incoming_msg)
+
     if '/st' in incoming_msg.lower():
         text = "Helo how are you:::::Type /menu for more"
         print(dir(msg))
