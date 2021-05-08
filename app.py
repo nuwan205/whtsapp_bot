@@ -286,16 +286,6 @@ def bot():
                 msg.body("Sorry This Lyrics is not exsist.")
         except:
             msg.body("an error has encounterd")
-
-
-
-
-
-
-
-
-
-
-    return str(resp)
+    print(str(resp))
 if __name__ == "__main__":
     app.run(host="localhost", port=5001, debug=True)
