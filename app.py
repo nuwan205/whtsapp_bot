@@ -19,13 +19,14 @@ def hello():
 def bot():
 
     incoming_msg = request.values.get('Body', '')
-    print(incoming_msg)
+    
 
     resp = MessagingResponse()
     msg = resp.message()
 
     responded = True
-
+  
+    msg.body(incoming_msg)
     if '/st' in incoming_msg.lower():
         text = "Helo how are you:::::Type /menu for more"
         print(dir(msg))
@@ -286,6 +287,6 @@ def bot():
                 msg.body("Sorry This Lyrics is not exsist.")
         except:
             msg.body("an error has encounterd")
-    print(str(resp))
+    return str(resp)
 if __name__ == "__main__":
     app.run(host="localhost", port=5001, debug=True)
