@@ -23,7 +23,7 @@ def bot():
 
     resp = MessagingResponse()
     msg = resp.message()
-    print(resp)
+    return resp
 
     responded = True
   
@@ -267,6 +267,7 @@ def bot():
         from bs4 import BeautifulSoup as bs
         from requests_html import HTMLSession
         import requests
+        print(34)
         session = HTMLSession()
         incoming_msg = incoming_msg[3:]
 
